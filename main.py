@@ -16,19 +16,20 @@ from torchvision.models import resnet18,resnet50
 from log_output import Mylog
 from dataset import JujubeDataset
 import sys, os,argparse
+from flip import *
 from bbox_extract import *
 
 root=os.getcwd()
 data_root=os.path.join(root,'data')
 log_dir = os.path.join(root,'logs')
-# print(log_dir)
+print(log_dir)
 
 cfg=dict(
     # Hyper Parameters
     EPOCH = 250,        # 训练整批数据多少次, 为了节约时间, 我们只训练一次
     BATCH_SIZE = 8,
     # LR = BATCH_SIZE*0.00125          # 学习率
-    LR=0.1,
+    LR=0.04,
     lr_scheduler=[130,180,250]
 )
 normalize = transforms.Normalize(mean=[0.5, 0.5, 0.5],
@@ -166,7 +167,7 @@ def train(dataloader,net,cfg,optimizer,writer,log=None):
                 'val_acc:{:.3f} '.format(val_acc)+
                 'val_loss:{:.3f}'.format(val_loss)
             )
-        save_model(net,os.path.join(log_dir,'epoach_{}-acc_{}.pth').format(epoch,val_acc))
+        save_model(net,log_dir+'epoach_{}-acc_{}.pth'.format(epoch,val_acc))
 
 
 def validate(dataloader,net):
@@ -191,24 +192,26 @@ def validate(dataloader,net):
 
 
 def test(file_name,net):
-    (x, y, w, h), origin_img = draw_bbox(file_name)
-    img = origin_img[y - 50:y + h + 50, x - 50:x + w + 50, :]
-    pil_img = Image.fromarray(img)
+    # (x, y, w, h), origin_img = draw_bbox(file_name)
+    # img = origin_img[y - 50:y + h + 50, x - 50:x + w + 50, :]
+    # pil_img = Image.fromarray(img)
+    # pil_img=Image.open(file_name)
+
+    pil_img=Image.fromarray(cv2.cvtColor(flip(file_name), cv2.COLOR_BGR2RGB))
+    # pil_img.show()
     pil_img = pil_img.resize((512, 512))
     pil_img=transform_test(pil_img)
     pil_img=pil_img.unsqueeze(0)
     pil_img = pil_img.to(device)
     pred_x = net(pil_img)
     _, predicted = torch.max(pred_x.data, 1)
-    print(predicted)
+    # print(predicted)
     label=classes[predicted]
-    cv2.rectangle(origin_img,(x-20,y-20),(x+w+20,y+h+20),color=(0,0,255),lineType=cv2.LINE_AA)
-    cv2.putText(origin_img,label,(x-20,y-20),fontFace = cv2.FONT_HERSHEY_SIMPLEX,fontScale=2,color=(255,0,0))
-    # break
     # cv2.namedWindow("rectangle", 0)
     # cv2.imshow("rectangle", img)
-    folder_path, file_name = os.path.split(file_name)
-    cv2.imwrite(os.path.join('output',file_name),origin_img)
+    # folder_path, file_name = os.path.split(file_name)
+    # cv2.imwrite(os.path.join('output',file_name),origin_img)
+    draw_bbox(file_name,label)
 
 
 
@@ -217,12 +220,11 @@ if __name__ == '__main__':
     parser.add_argument('--train',action='store_true',help='True is train,False just test')
     group = parser.add_mutually_exclusive_group()
     group.add_argument('--image_path',default='test',type=str,help='the path of images')
-    group.add_argument('--image',dest='img', type=str,help='the filename of test_image')
     parser.add_argument('--model',dest='model_file',default=os.path.join('model','logsepoach_159-acc_0.9801894918173988.pth'),
                         type=str,help='the checkpoint of trained')
     args = parser.parse_args()
 
-    net=resnet50(pretrained=True)
+    net=resnet18(pretrained=True)
     TIMESTAMP = time.strftime("%Y-%m-%d-%H-%M-%S")
     #
     writer = SummaryWriter(os.path.join(log_dir , TIMESTAMP))
@@ -236,8 +238,8 @@ if __name__ == '__main__':
     if args.train:
         logger.info_out('>>>>>>>>>>>>>>>>>training>>>>>>>>>>>>>>>>>>>')
         loss_func = nn.CrossEntropyLoss()
-        optimizer = torch.optim.SGD(net.parameters(), lr=cfg['LR'], momentum=0.9, weight_decay=5e-4)
-        # net.load_state_dict(torch.load(args.model_file))
+        optimizer = torch.optim.SGD(net.parameters(), lr=cfg['LR'], momentum=0.9, weight_decay=1e-4)
+        net.load_state_dict(torch.load(args.model_file))
         train(dataloader=trainloader,net=net,optimizer=optimizer,cfg=cfg,writer=writer,log=logger)
 
     else:

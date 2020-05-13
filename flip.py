@@ -8,9 +8,10 @@ def flip(file_name):
 
     img = cv2.imread(file_name)
     img=img[0:3000,:,:]
-    cv2.namedWindow("flip", 0)
-    cv2.imshow("flip", img)
-    cv2.imwrite(file_name,img)
+    return img
+    # cv2.namedWindow("flip", 0)
+    # cv2.imshow("flip", img)
+    # cv2.imwrite(file_name,img)
     # cv2.waitKey(0)
     # cv2.destroyAllWindows()
 
