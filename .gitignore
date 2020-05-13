@@ -130,6 +130,14 @@ dmypy.json
 
 /data/
 /data
+/test
+/output
+
+/model
+/logs
+
+
+__pycache__
 
 /.idea
 

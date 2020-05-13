@@ -1,0 +1,14 @@
+Tue, 12 May 2020 22:54:01 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>
+Tue, 12 May 2020 22:54:02 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>training>>>>>>>>>>>>>>>>>>>
+Tue, 12 May 2020 22:56:15 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>
+Tue, 12 May 2020 22:56:16 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>training>>>>>>>>>>>>>>>>>>>
+Tue, 12 May 2020 22:57:21 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>
+Tue, 12 May 2020 22:59:31 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>
+Tue, 12 May 2020 23:00:28 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>
+Tue, 12 May 2020 23:02:13 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>
+Tue, 12 May 2020 23:03:00 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>
+Tue, 12 May 2020 23:04:26 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>
+Tue, 12 May 2020 23:05:22 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>
+Tue, 12 May 2020 23:05:40 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>
+Tue, 12 May 2020 23:06:45 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>
+Tue, 12 May 2020 23:07:34 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>

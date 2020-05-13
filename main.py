@@ -12,24 +12,25 @@ import matplotlib.pyplot as plt
 import numpy as np
 from tensorboardX import SummaryWriter
 from resnet import ResNet18
-from torchvision.models import resnet18
+from torchvision.models import resnet18,resnet50
 from log_output import Mylog
 from dataset import JujubeDataset
-import sys, os
+import sys, os,argparse
+from bbox_extract import *
 
 root=os.getcwd()
 data_root=os.path.join(root,'data')
-log_dir = 'logs/resnet/'
+log_dir = os.path.join(root,'logs')
+print(log_dir)
 
 cfg=dict(
     # Hyper Parameters
     EPOCH = 250,        # 训练整批数据多少次, 为了节约时间, 我们只训练一次
-    BATCH_SIZE = 4,
+    BATCH_SIZE = 8,
     # LR = BATCH_SIZE*0.00125          # 学习率
-    LR=0.02,
+    LR=0.04,
     lr_scheduler=[130,180,250]
 )
-
 normalize = transforms.Normalize(mean=[0.5, 0.5, 0.5],
                                  std=[0.5, 0.5, 0.5])
 transform_train = transforms.Compose([
@@ -45,7 +46,11 @@ transform_train = transforms.Compose([
             transforms.RandomErasing(p=0.5, scale=(0.02, 0.33), ratio=(0.3, 3.3), value=0, inplace=False),
             normalize,
         ])
-
+transform_test=transforms.Compose([
+    transforms.Resize(512),
+    transforms.ToTensor(),
+    normalize]
+)
 trainset=JujubeDataset(img_path='data',transform=transform_train)
 #划分数据集
 train_full_size=int(len(trainset))
@@ -163,6 +168,7 @@ def train(dataloader,net,cfg,optimizer,writer,log=None):
             )
         save_model(net,log_dir+'epoach_{}-acc_{}.pth'.format(epoch,val_acc))
 
+
 def validate(dataloader,net):
     test_Loss = []
     test_total = 0
@@ -184,35 +190,72 @@ def validate(dataloader,net):
     return acc,loss
 
 
-model_urls = {
-    'resnet18': 'https://download.pytorch.org/models/resnet18-5c106cde.pth',
-    'resnet34': 'https://download.pytorch.org/models/resnet34-333f7ec4.pth',
-    'resnet50': 'https://download.pytorch.org/models/resnet50-19c8e357.pth',
-    'resnet101': 'https://download.pytorch.org/models/resnet101-5d3b4d8f.pth',
-    'resnet152': 'https://download.pytorch.org/models/resnet152-b121ed2d.pth',
-}
+def test(file_name,net):
+    (x, y, w, h), origin_img = draw_bbox(file_name)
+    img = origin_img[y - 50:y + h + 50, x - 50:x + w + 50, :]
+    pil_img = Image.fromarray(img)
+    pil_img = pil_img.resize((512, 512))
+    pil_img=transform_test(pil_img)
+    pil_img=pil_img.unsqueeze(0)
+    pil_img = pil_img.to(device)
+    pred_x = net(pil_img)
+    _, predicted = torch.max(pred_x.data, 1)
+    print(predicted)
+    label=classes[predicted]
+    cv2.rectangle(origin_img,(x-20,y-20),(x+w+20,y+h+20),color=(0,0,255),lineType=cv2.LINE_AA)
+    cv2.putText(origin_img,label,(x-20,y-20),fontFace = cv2.FONT_HERSHEY_SIMPLEX,fontScale=2,color=(255,0,0))
+    # break
+    # cv2.namedWindow("rectangle", 0)
+    # cv2.imshow("rectangle", img)
+    folder_path, file_name = os.path.split(file_name)
+    cv2.imwrite(os.path.join('output',file_name),origin_img)
+
 
 
 if __name__ == '__main__':
-    log_dir = 'logs/resnet/'
-    # net = densenet121(drop_rate=0.5,num_classes=10)
-    net = ResNet18()
-    net=resnet18(pretrained=True)
+    parser = argparse.ArgumentParser(description='Jujube classfication training and testing.')
+    parser.add_argument('--train',action='store_true',help='True is train,False just test')
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument('--image_path',default='test',type=str,help='the path of images')
+    group.add_argument('--image',dest='img', type=str,help='the filename of test_image')
+    parser.add_argument('--model',dest='model_file',default=os.path.join('model','logsepoach_159-acc_0.9801894918173988.pth'),
+                        type=str,help='the checkpoint of trained')
+    args = parser.parse_args()
 
-    lr_index=0
+    net=resnet50(pretrained=True)
     TIMESTAMP = time.strftime("%Y-%m-%d-%H-%M-%S")
     #
-    writer = SummaryWriter(log_dir + TIMESTAMP)
+    writer = SummaryWriter(os.path.join(log_dir , TIMESTAMP))
     logger=Mylog(log_dir+'log.txt')
     logger.info_out('>>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>')
     # #绘制网络框图
-    optimizer = torch.optim.SGD(net.parameters(), lr=cfg['LR'], momentum=0.9, weight_decay=1e-4)
-    loss_func = nn.CrossEntropyLoss()
+
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     net.to(device)
-    train(trainloader,net,cfg,optimizer,writer,logger)
+
+    if args.train:
+        logger.info_out('>>>>>>>>>>>>>>>>>training>>>>>>>>>>>>>>>>>>>')
+        loss_func = nn.CrossEntropyLoss()
+        optimizer = torch.optim.SGD(net.parameters(), lr=cfg['LR'], momentum=0.9, weight_decay=1e-4)
+        net.load_state_dict(torch.load(args.model_file))
+        train(dataloader=trainloader,net=net,optimizer=optimizer,cfg=cfg,writer=writer,log=logger)
+
+    else:
+        if args.model_file.endswith('.pth'):
+            model_file=args.model_file
+            net.load_state_dict(torch.load(args.model_file))
+        else:
+            raise ValueError('Invalid model_file: "%s"' % args.model_file)
+        if args.image_path :
+            for idx,img in enumerate(os.listdir(args.image_path)):
+                img=os.path.join(args.image_path, img)
+                test(img,net)
 
 
 
 
-    # data_analyze(trainset)
+#example
+#python main.py --image_path test --model model/epoach_158-acc_0.9883040935672515.pth
+
+
+
