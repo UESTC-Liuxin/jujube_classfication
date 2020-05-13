@@ -21,14 +21,14 @@ from bbox_extract import *
 root=os.getcwd()
 data_root=os.path.join(root,'data')
 log_dir = os.path.join(root,'logs')
-print(log_dir)
+# print(log_dir)
 
 cfg=dict(
     # Hyper Parameters
     EPOCH = 250,        # 训练整批数据多少次, 为了节约时间, 我们只训练一次
     BATCH_SIZE = 8,
     # LR = BATCH_SIZE*0.00125          # 学习率
-    LR=0.04,
+    LR=0.1,
     lr_scheduler=[130,180,250]
 )
 normalize = transforms.Normalize(mean=[0.5, 0.5, 0.5],
@@ -166,7 +166,7 @@ def train(dataloader,net,cfg,optimizer,writer,log=None):
                 'val_acc:{:.3f} '.format(val_acc)+
                 'val_loss:{:.3f}'.format(val_loss)
             )
-        save_model(net,log_dir+'epoach_{}-acc_{}.pth'.format(epoch,val_acc))
+        save_model(net,os.path.join(log_dir,'epoach_{}-acc_{}.pth').format(epoch,val_acc))
 
 
 def validate(dataloader,net):
@@ -236,8 +236,8 @@ if __name__ == '__main__':
     if args.train:
         logger.info_out('>>>>>>>>>>>>>>>>>training>>>>>>>>>>>>>>>>>>>')
         loss_func = nn.CrossEntropyLoss()
-        optimizer = torch.optim.SGD(net.parameters(), lr=cfg['LR'], momentum=0.9, weight_decay=1e-4)
-        net.load_state_dict(torch.load(args.model_file))
+        optimizer = torch.optim.SGD(net.parameters(), lr=cfg['LR'], momentum=0.9, weight_decay=5e-4)
+        # net.load_state_dict(torch.load(args.model_file))
         train(dataloader=trainloader,net=net,optimizer=optimizer,cfg=cfg,writer=writer,log=logger)
 
     else:

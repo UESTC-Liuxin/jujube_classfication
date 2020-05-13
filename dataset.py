@@ -40,7 +40,7 @@ class JujubeDataset(Data.Dataset):
         pil_img=pil_img.resize((512,512))
         if self.transform is not None:
             pil_img = self.transform(pil_img)
-        return img,self.lables[idx]
+        return pil_img,self.lables[idx]
 
 
 if __name__ == '__main__':

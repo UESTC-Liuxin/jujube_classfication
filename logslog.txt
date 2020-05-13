@@ -230,3 +230,121 @@ Wed, 13 May 2020 14:02:53 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>
 Wed, 13 May 2020 14:17:21 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>
 Wed, 13 May 2020 14:17:57 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>
 Wed, 13 May 2020 15:09:53 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>
+Wed, 13 May 2020 15:18:44 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>
+Wed, 13 May 2020 15:18:45 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>training>>>>>>>>>>>>>>>>>>>
+Wed, 13 May 2020 15:19:51 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>
+Wed, 13 May 2020 15:19:53 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>training>>>>>>>>>>>>>>>>>>>
+Wed, 13 May 2020 15:21:24 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>
+Wed, 13 May 2020 15:21:25 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>training>>>>>>>>>>>>>>>>>>>
+Wed, 13 May 2020 15:22:11 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>record>>>>>>>>>>>>>>>>>>>
+Wed, 13 May 2020 15:22:12 log_output.py[line:34] INFO >>>>>>>>>>>>>>>>>training>>>>>>>>>>>>>>>>>>>
+Wed, 13 May 2020 15:24:28 log_output.py[line:34] INFO epoch:0 lr:0.04000 train_acc:0.522 train_loss:1.132 val_acc:0.491 val_loss:0.687
+Wed, 13 May 2020 15:26:43 log_output.py[line:34] INFO epoch:1 lr:0.04000 train_acc:0.541 train_loss:0.753 val_acc:0.514 val_loss:0.712
+Wed, 13 May 2020 15:28:57 log_output.py[line:34] INFO epoch:2 lr:0.04000 train_acc:0.569 train_loss:0.752 val_acc:0.645 val_loss:0.660
+Wed, 13 May 2020 15:31:15 log_output.py[line:34] INFO epoch:3 lr:0.04000 train_acc:0.598 train_loss:0.709 val_acc:0.583 val_loss:0.696
+Wed, 13 May 2020 15:33:31 log_output.py[line:34] INFO epoch:4 lr:0.04000 train_acc:0.626 train_loss:0.697 val_acc:0.649 val_loss:0.670
+Wed, 13 May 2020 15:35:45 log_output.py[line:34] INFO epoch:5 lr:0.04000 train_acc:0.603 train_loss:0.699 val_acc:0.667 val_loss:0.613
+Wed, 13 May 2020 15:37:59 log_output.py[line:34] INFO epoch:6 lr:0.04000 train_acc:0.632 train_loss:0.661 val_acc:0.630 val_loss:0.675
+Wed, 13 May 2020 15:40:13 log_output.py[line:34] INFO epoch:7 lr:0.04000 train_acc:0.610 train_loss:0.684 val_acc:0.692 val_loss:0.592
+Wed, 13 May 2020 15:42:28 log_output.py[line:34] INFO epoch:8 lr:0.04000 train_acc:0.651 train_loss:0.633 val_acc:0.661 val_loss:0.656
+Wed, 13 May 2020 15:44:44 log_output.py[line:34] INFO epoch:9 lr:0.04000 train_acc:0.643 train_loss:0.648 val_acc:0.661 val_loss:0.644
+Wed, 13 May 2020 15:46:59 log_output.py[line:34] INFO epoch:10 lr:0.04000 train_acc:0.642 train_loss:0.658 val_acc:0.657 val_loss:0.617
+Wed, 13 May 2020 15:49:16 log_output.py[line:34] INFO epoch:11 lr:0.04000 train_acc:0.632 train_loss:0.653 val_acc:0.643 val_loss:0.634
+Wed, 13 May 2020 15:51:31 log_output.py[line:34] INFO epoch:12 lr:0.04000 train_acc:0.650 train_loss:0.626 val_acc:0.738 val_loss:0.540
+Wed, 13 May 2020 15:53:46 log_output.py[line:34] INFO epoch:13 lr:0.04000 train_acc:0.681 train_loss:0.611 val_acc:0.665 val_loss:0.730
+Wed, 13 May 2020 15:56:01 log_output.py[line:34] INFO epoch:14 lr:0.04000 train_acc:0.683 train_loss:0.604 val_acc:0.727 val_loss:0.535
+Wed, 13 May 2020 15:58:17 log_output.py[line:34] INFO epoch:15 lr:0.04000 train_acc:0.667 train_loss:0.637 val_acc:0.589 val_loss:0.649
+Wed, 13 May 2020 16:00:31 log_output.py[line:34] INFO epoch:16 lr:0.04000 train_acc:0.645 train_loss:0.645 val_acc:0.648 val_loss:0.642
+Wed, 13 May 2020 16:02:45 log_output.py[line:34] INFO epoch:17 lr:0.04000 train_acc:0.685 train_loss:0.605 val_acc:0.735 val_loss:0.529
+Wed, 13 May 2020 16:05:01 log_output.py[line:34] INFO epoch:18 lr:0.04000 train_acc:0.678 train_loss:0.611 val_acc:0.697 val_loss:0.565
+Wed, 13 May 2020 16:07:15 log_output.py[line:34] INFO epoch:19 lr:0.04000 train_acc:0.661 train_loss:0.606 val_acc:0.742 val_loss:0.531
+Wed, 13 May 2020 16:09:30 log_output.py[line:34] INFO epoch:20 lr:0.04000 train_acc:0.680 train_loss:0.613 val_acc:0.614 val_loss:0.694
+Wed, 13 May 2020 16:11:44 log_output.py[line:34] INFO epoch:21 lr:0.04000 train_acc:0.708 train_loss:0.590 val_acc:0.743 val_loss:0.508
+Wed, 13 May 2020 16:13:58 log_output.py[line:34] INFO epoch:22 lr:0.04000 train_acc:0.699 train_loss:0.585 val_acc:0.671 val_loss:0.596
+Wed, 13 May 2020 16:16:12 log_output.py[line:34] INFO epoch:23 lr:0.04000 train_acc:0.718 train_loss:0.575 val_acc:0.811 val_loss:0.461
+Wed, 13 May 2020 16:18:28 log_output.py[line:34] INFO epoch:24 lr:0.04000 train_acc:0.739 train_loss:0.523 val_acc:0.757 val_loss:0.469
+Wed, 13 May 2020 16:20:44 log_output.py[line:34] INFO epoch:25 lr:0.04000 train_acc:0.753 train_loss:0.505 val_acc:0.866 val_loss:0.351
+Wed, 13 May 2020 16:22:59 log_output.py[line:34] INFO epoch:26 lr:0.04000 train_acc:0.806 train_loss:0.450 val_acc:0.862 val_loss:0.349
+Wed, 13 May 2020 16:25:15 log_output.py[line:34] INFO epoch:27 lr:0.04000 train_acc:0.786 train_loss:0.470 val_acc:0.819 val_loss:0.474
+Wed, 13 May 2020 16:27:31 log_output.py[line:34] INFO epoch:28 lr:0.04000 train_acc:0.834 train_loss:0.391 val_acc:0.671 val_loss:1.211
+Wed, 13 May 2020 16:29:49 log_output.py[line:34] INFO epoch:29 lr:0.04000 train_acc:0.830 train_loss:0.422 val_acc:0.792 val_loss:0.441
+Wed, 13 May 2020 16:32:03 log_output.py[line:34] INFO epoch:30 lr:0.04000 train_acc:0.804 train_loss:0.469 val_acc:0.833 val_loss:0.371
+Wed, 13 May 2020 16:34:18 log_output.py[line:34] INFO epoch:31 lr:0.04000 train_acc:0.789 train_loss:0.449 val_acc:0.863 val_loss:0.331
+Wed, 13 May 2020 16:36:34 log_output.py[line:34] INFO epoch:32 lr:0.04000 train_acc:0.851 train_loss:0.376 val_acc:0.855 val_loss:0.332
+Wed, 13 May 2020 16:38:50 log_output.py[line:34] INFO epoch:33 lr:0.04000 train_acc:0.851 train_loss:0.373 val_acc:0.882 val_loss:0.335
+Wed, 13 May 2020 16:41:05 log_output.py[line:34] INFO epoch:34 lr:0.04000 train_acc:0.837 train_loss:0.415 val_acc:0.738 val_loss:0.495
+Wed, 13 May 2020 16:43:22 log_output.py[line:34] INFO epoch:35 lr:0.04000 train_acc:0.830 train_loss:0.412 val_acc:0.880 val_loss:0.286
+Wed, 13 May 2020 16:45:37 log_output.py[line:34] INFO epoch:36 lr:0.04000 train_acc:0.859 train_loss:0.374 val_acc:0.874 val_loss:0.280
+Wed, 13 May 2020 16:47:52 log_output.py[line:34] INFO epoch:37 lr:0.04000 train_acc:0.851 train_loss:0.362 val_acc:0.889 val_loss:0.311
+Wed, 13 May 2020 16:50:08 log_output.py[line:34] INFO epoch:38 lr:0.04000 train_acc:0.817 train_loss:0.430 val_acc:0.697 val_loss:0.586
+Wed, 13 May 2020 16:52:21 log_output.py[line:34] INFO epoch:39 lr:0.04000 train_acc:0.860 train_loss:0.332 val_acc:0.909 val_loss:0.255
+Wed, 13 May 2020 16:54:35 log_output.py[line:34] INFO epoch:40 lr:0.04000 train_acc:0.878 train_loss:0.323 val_acc:0.834 val_loss:0.374
+Wed, 13 May 2020 16:56:50 log_output.py[line:34] INFO epoch:41 lr:0.04000 train_acc:0.853 train_loss:0.353 val_acc:0.871 val_loss:0.537
+Wed, 13 May 2020 16:59:04 log_output.py[line:34] INFO epoch:42 lr:0.04000 train_acc:0.857 train_loss:0.350 val_acc:0.887 val_loss:0.276
+Wed, 13 May 2020 17:01:21 log_output.py[line:34] INFO epoch:43 lr:0.04000 train_acc:0.875 train_loss:0.322 val_acc:0.904 val_loss:0.260
+Wed, 13 May 2020 17:03:36 log_output.py[line:34] INFO epoch:44 lr:0.04000 train_acc:0.865 train_loss:0.352 val_acc:0.906 val_loss:0.253
+Wed, 13 May 2020 17:05:52 log_output.py[line:34] INFO epoch:45 lr:0.04000 train_acc:0.851 train_loss:0.387 val_acc:0.730 val_loss:0.659
+Wed, 13 May 2020 17:08:06 log_output.py[line:34] INFO epoch:46 lr:0.04000 train_acc:0.873 train_loss:0.323 val_acc:0.897 val_loss:0.273
+Wed, 13 May 2020 17:10:20 log_output.py[line:34] INFO epoch:47 lr:0.04000 train_acc:0.868 train_loss:0.321 val_acc:0.860 val_loss:0.329
+Wed, 13 May 2020 17:12:37 log_output.py[line:34] INFO epoch:48 lr:0.04000 train_acc:0.879 train_loss:0.320 val_acc:0.900 val_loss:0.246
+Wed, 13 May 2020 17:14:53 log_output.py[line:34] INFO epoch:49 lr:0.04000 train_acc:0.865 train_loss:0.328 val_acc:0.860 val_loss:0.322
+Wed, 13 May 2020 17:17:08 log_output.py[line:34] INFO epoch:50 lr:0.04000 train_acc:0.869 train_loss:0.321 val_acc:0.908 val_loss:0.233
+Wed, 13 May 2020 17:19:25 log_output.py[line:34] INFO epoch:51 lr:0.04000 train_acc:0.881 train_loss:0.294 val_acc:0.915 val_loss:0.230
+Wed, 13 May 2020 17:21:39 log_output.py[line:34] INFO epoch:52 lr:0.04000 train_acc:0.891 train_loss:0.303 val_acc:0.798 val_loss:0.436
+Wed, 13 May 2020 17:23:53 log_output.py[line:34] INFO epoch:53 lr:0.04000 train_acc:0.863 train_loss:0.345 val_acc:0.900 val_loss:0.238
+Wed, 13 May 2020 17:26:09 log_output.py[line:34] INFO epoch:54 lr:0.04000 train_acc:0.885 train_loss:0.297 val_acc:0.886 val_loss:0.260
+Wed, 13 May 2020 17:28:23 log_output.py[line:34] INFO epoch:55 lr:0.04000 train_acc:0.884 train_loss:0.310 val_acc:0.867 val_loss:0.296
+Wed, 13 May 2020 17:30:38 log_output.py[line:34] INFO epoch:56 lr:0.04000 train_acc:0.888 train_loss:0.297 val_acc:0.912 val_loss:0.241
+Wed, 13 May 2020 17:32:52 log_output.py[line:34] INFO epoch:57 lr:0.04000 train_acc:0.897 train_loss:0.281 val_acc:0.783 val_loss:0.491
+Wed, 13 May 2020 17:35:07 log_output.py[line:34] INFO epoch:58 lr:0.04000 train_acc:0.889 train_loss:0.303 val_acc:0.817 val_loss:0.365
+Wed, 13 May 2020 17:37:21 log_output.py[line:34] INFO epoch:59 lr:0.04000 train_acc:0.886 train_loss:0.303 val_acc:0.887 val_loss:0.313
+Wed, 13 May 2020 17:39:38 log_output.py[line:34] INFO epoch:60 lr:0.04000 train_acc:0.860 train_loss:0.347 val_acc:0.866 val_loss:0.307
+Wed, 13 May 2020 17:41:52 log_output.py[line:34] INFO epoch:61 lr:0.04000 train_acc:0.889 train_loss:0.303 val_acc:0.896 val_loss:0.261
+Wed, 13 May 2020 17:44:08 log_output.py[line:34] INFO epoch:62 lr:0.04000 train_acc:0.909 train_loss:0.257 val_acc:0.910 val_loss:0.213
+Wed, 13 May 2020 17:46:22 log_output.py[line:34] INFO epoch:63 lr:0.04000 train_acc:0.886 train_loss:0.294 val_acc:0.884 val_loss:0.287
+Wed, 13 May 2020 17:48:37 log_output.py[line:34] INFO epoch:64 lr:0.04000 train_acc:0.885 train_loss:0.286 val_acc:0.898 val_loss:0.240
+Wed, 13 May 2020 17:50:52 log_output.py[line:34] INFO epoch:65 lr:0.04000 train_acc:0.884 train_loss:0.288 val_acc:0.929 val_loss:0.195
+Wed, 13 May 2020 17:53:07 log_output.py[line:34] INFO epoch:66 lr:0.04000 train_acc:0.900 train_loss:0.250 val_acc:0.666 val_loss:4.210
+Wed, 13 May 2020 17:55:22 log_output.py[line:34] INFO epoch:67 lr:0.04000 train_acc:0.897 train_loss:0.264 val_acc:0.889 val_loss:0.268
+Wed, 13 May 2020 17:57:36 log_output.py[line:34] INFO epoch:68 lr:0.04000 train_acc:0.882 train_loss:0.316 val_acc:0.910 val_loss:0.228
+Wed, 13 May 2020 17:59:51 log_output.py[line:34] INFO epoch:69 lr:0.04000 train_acc:0.891 train_loss:0.271 val_acc:0.935 val_loss:0.186
+Wed, 13 May 2020 18:02:05 log_output.py[line:34] INFO epoch:70 lr:0.04000 train_acc:0.873 train_loss:0.355 val_acc:0.880 val_loss:0.269
+Wed, 13 May 2020 18:04:20 log_output.py[line:34] INFO epoch:71 lr:0.04000 train_acc:0.878 train_loss:0.299 val_acc:0.909 val_loss:0.219
+Wed, 13 May 2020 18:06:34 log_output.py[line:34] INFO epoch:72 lr:0.04000 train_acc:0.893 train_loss:0.269 val_acc:0.854 val_loss:0.321
+Wed, 13 May 2020 18:08:48 log_output.py[line:34] INFO epoch:73 lr:0.04000 train_acc:0.889 train_loss:0.275 val_acc:0.866 val_loss:0.294
+Wed, 13 May 2020 18:11:02 log_output.py[line:34] INFO epoch:74 lr:0.04000 train_acc:0.866 train_loss:0.325 val_acc:0.855 val_loss:0.329
+Wed, 13 May 2020 18:13:17 log_output.py[line:34] INFO epoch:75 lr:0.04000 train_acc:0.896 train_loss:0.261 val_acc:0.915 val_loss:0.274
+Wed, 13 May 2020 18:15:31 log_output.py[line:34] INFO epoch:76 lr:0.04000 train_acc:0.904 train_loss:0.248 val_acc:0.925 val_loss:0.207
+Wed, 13 May 2020 18:17:46 log_output.py[line:34] INFO epoch:77 lr:0.04000 train_acc:0.891 train_loss:0.295 val_acc:0.922 val_loss:0.216
+Wed, 13 May 2020 18:20:00 log_output.py[line:34] INFO epoch:78 lr:0.04000 train_acc:0.902 train_loss:0.253 val_acc:0.800 val_loss:0.411
+Wed, 13 May 2020 18:22:14 log_output.py[line:34] INFO epoch:79 lr:0.04000 train_acc:0.895 train_loss:0.259 val_acc:0.813 val_loss:0.460
+Wed, 13 May 2020 18:24:28 log_output.py[line:34] INFO epoch:80 lr:0.04000 train_acc:0.890 train_loss:0.292 val_acc:0.845 val_loss:0.323
+Wed, 13 May 2020 18:26:43 log_output.py[line:34] INFO epoch:81 lr:0.04000 train_acc:0.896 train_loss:0.261 val_acc:0.894 val_loss:0.267
+Wed, 13 May 2020 18:28:57 log_output.py[line:34] INFO epoch:82 lr:0.04000 train_acc:0.909 train_loss:0.242 val_acc:0.889 val_loss:0.281
+Wed, 13 May 2020 18:31:11 log_output.py[line:34] INFO epoch:83 lr:0.04000 train_acc:0.897 train_loss:0.283 val_acc:0.873 val_loss:0.306
+Wed, 13 May 2020 18:33:27 log_output.py[line:34] INFO epoch:84 lr:0.04000 train_acc:0.896 train_loss:0.274 val_acc:0.917 val_loss:0.217
+Wed, 13 May 2020 18:35:44 log_output.py[line:34] INFO epoch:85 lr:0.04000 train_acc:0.894 train_loss:0.284 val_acc:0.854 val_loss:0.320
+Wed, 13 May 2020 18:37:58 log_output.py[line:34] INFO epoch:86 lr:0.04000 train_acc:0.898 train_loss:0.266 val_acc:0.917 val_loss:0.216
+Wed, 13 May 2020 18:40:12 log_output.py[line:34] INFO epoch:87 lr:0.04000 train_acc:0.894 train_loss:0.279 val_acc:0.840 val_loss:0.349
+Wed, 13 May 2020 18:42:26 log_output.py[line:34] INFO epoch:88 lr:0.04000 train_acc:0.902 train_loss:0.267 val_acc:0.928 val_loss:0.186
+Wed, 13 May 2020 18:44:41 log_output.py[line:34] INFO epoch:89 lr:0.04000 train_acc:0.889 train_loss:0.268 val_acc:0.935 val_loss:0.177
+Wed, 13 May 2020 18:46:55 log_output.py[line:34] INFO epoch:90 lr:0.04000 train_acc:0.882 train_loss:0.281 val_acc:0.916 val_loss:0.210
+Wed, 13 May 2020 18:49:09 log_output.py[line:34] INFO epoch:91 lr:0.04000 train_acc:0.904 train_loss:0.245 val_acc:0.885 val_loss:0.350
+Wed, 13 May 2020 18:51:25 log_output.py[line:34] INFO epoch:92 lr:0.04000 train_acc:0.885 train_loss:0.286 val_acc:0.857 val_loss:0.356
+Wed, 13 May 2020 18:53:41 log_output.py[line:34] INFO epoch:93 lr:0.04000 train_acc:0.901 train_loss:0.273 val_acc:0.867 val_loss:0.285
+Wed, 13 May 2020 18:55:56 log_output.py[line:34] INFO epoch:94 lr:0.04000 train_acc:0.904 train_loss:0.265 val_acc:0.927 val_loss:0.197
+Wed, 13 May 2020 18:58:10 log_output.py[line:34] INFO epoch:95 lr:0.04000 train_acc:0.910 train_loss:0.221 val_acc:0.940 val_loss:0.173
+Wed, 13 May 2020 19:00:25 log_output.py[line:34] INFO epoch:96 lr:0.04000 train_acc:0.891 train_loss:0.288 val_acc:0.877 val_loss:0.285
+Wed, 13 May 2020 19:02:41 log_output.py[line:34] INFO epoch:97 lr:0.04000 train_acc:0.899 train_loss:0.254 val_acc:0.903 val_loss:0.236
+Wed, 13 May 2020 19:04:55 log_output.py[line:34] INFO epoch:98 lr:0.04000 train_acc:0.900 train_loss:0.270 val_acc:0.786 val_loss:0.531
+Wed, 13 May 2020 19:07:10 log_output.py[line:34] INFO epoch:99 lr:0.04000 train_acc:0.879 train_loss:0.302 val_acc:0.921 val_loss:0.228
+Wed, 13 May 2020 19:09:25 log_output.py[line:34] INFO epoch:100 lr:0.04000 train_acc:0.904 train_loss:0.266 val_acc:0.761 val_loss:1.160
+Wed, 13 May 2020 19:11:39 log_output.py[line:34] INFO epoch:101 lr:0.04000 train_acc:0.901 train_loss:0.254 val_acc:0.901 val_loss:0.241
+Wed, 13 May 2020 19:13:54 log_output.py[line:34] INFO epoch:102 lr:0.04000 train_acc:0.886 train_loss:0.273 val_acc:0.874 val_loss:0.271
+Wed, 13 May 2020 19:16:09 log_output.py[line:34] INFO epoch:103 lr:0.04000 train_acc:0.884 train_loss:0.290 val_acc:0.929 val_loss:0.187
+Wed, 13 May 2020 19:18:24 log_output.py[line:34] INFO epoch:104 lr:0.04000 train_acc:0.915 train_loss:0.234 val_acc:0.931 val_loss:0.181
+Wed, 13 May 2020 19:20:39 log_output.py[line:34] INFO epoch:105 lr:0.04000 train_acc:0.898 train_loss:0.275 val_acc:0.878 val_loss:0.258
+Wed, 13 May 2020 19:22:54 log_output.py[line:34] INFO epoch:106 lr:0.04000 train_acc:0.892 train_loss:0.251 val_acc:0.925 val_loss:0.219
+Wed, 13 May 2020 19:25:09 log_output.py[line:34] INFO epoch:107 lr:0.04000 train_acc:0.891 train_loss:0.265 val_acc:0.850 val_loss:0.317
+Wed, 13 May 2020 19:27:25 log_output.py[line:34] INFO epoch:108 lr:0.04000 train_acc:0.895 train_loss:0.268 val_acc:0.869 val_loss:0.286
+Wed, 13 May 2020 19:29:44 log_output.py[line:34] INFO epoch:109 lr:0.04000 train_acc:0.898 train_loss:0.250 val_acc:0.911 val_loss:0.217
