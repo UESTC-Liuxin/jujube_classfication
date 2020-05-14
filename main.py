@@ -29,26 +29,31 @@ cfg=dict(
     EPOCH = 250,        # 训练整批数据多少次, 为了节约时间, 我们只训练一次
     BATCH_SIZE = 8,
     # LR = BATCH_SIZE*0.00125          # 学习率
-    LR=0.04,
+    LR=0.1,
     lr_scheduler=[130,180,250]
 )
 normalize = transforms.Normalize(mean=[0.5, 0.5, 0.5],
                                  std=[0.5, 0.5, 0.5])
 transform_train = transforms.Compose([
-            transforms.RandomResizedCrop(512),
-            # transforms.RandomRotation(30, resample=Image.BICUBIC, expand=False, center=(256, 256)),
+            transforms.Resize(512),
+            # transforms.RandomResizedCrop(512,scale=(0.08,1.0),ratio=(0.75,1.33),interpolation=2),
+            # transforms.RandomResizedCrop(512),
+            transforms.RandomRotation(30, resample=Image.BICUBIC, expand=False, center=(256, 256)),
             transforms.RandomHorizontalFlip(),
-            transforms.RandomChoice([
+            transforms.RandomVerticalFlip(),
+            transforms.RandomChoice([  #random number
                 transforms.ColorJitter(0.2, 0.2, 0.2, 0.2),
                 transforms.RandomAffine(degrees=(-10, 10), translate=(0.1, 0.1),
                                         scale=(0.8, 1.2),
                                         resample=Image.BILINEAR)]),
             transforms.ToTensor(),
-            transforms.RandomErasing(p=0.5, scale=(0.02, 0.33), ratio=(0.3, 3.3), value=0, inplace=False),
+            # transforms.RandomErasing(p=0.5, scale=(0.02, 0.33), ratio=(0.3, 3.3), value=0, inplace=False),
             normalize,
         ])
+
 transform_test=transforms.Compose([
     transforms.Resize(512),
+    # transforms.CenterCrop(512),
     transforms.ToTensor(),
     normalize]
 )
@@ -132,6 +137,10 @@ def train(dataloader,net,cfg,optimizer,writer,log=None):
 
         for step,(batch_x,batch_y) in enumerate(trainloader):
             batch_x,batch_y=batch_x.to(device),batch_y.to(device)
+            # img = batch_x[0].mul(255).byte()
+            # img = img.cpu().numpy().transpose((1, 2, 0))
+            # plt.imshow(img)
+            # plt.show()
             # print(batch_x.size())
             out=net(batch_x)
             #record train_set acc
@@ -167,7 +176,7 @@ def train(dataloader,net,cfg,optimizer,writer,log=None):
                 'val_acc:{:.3f} '.format(val_acc)+
                 'val_loss:{:.3f}'.format(val_loss)
             )
-        save_model(net,log_dir+'epoach_{}-acc_{}.pth'.format(epoch,val_acc))
+        save_model(net,os.path.join(log_dir,'epoach_{}-acc_{}.pth').format(epoch,val_acc))
 
 
 def validate(dataloader,net):
@@ -192,14 +201,9 @@ def validate(dataloader,net):
 
 
 def test(file_name,net):
-    # (x, y, w, h), origin_img = draw_bbox(file_name)
-    # img = origin_img[y - 50:y + h + 50, x - 50:x + w + 50, :]
-    # pil_img = Image.fromarray(img)
-    # pil_img=Image.open(file_name)
 
-    pil_img=Image.fromarray(cv2.cvtColor(flip(file_name), cv2.COLOR_BGR2RGB))
+    pil_img=Image.open(file_name)
     # pil_img.show()
-    pil_img = pil_img.resize((512, 512))
     pil_img=transform_test(pil_img)
     pil_img=pil_img.unsqueeze(0)
     pil_img = pil_img.to(device)
@@ -220,7 +224,7 @@ if __name__ == '__main__':
     parser.add_argument('--train',action='store_true',help='True is train,False just test')
     group = parser.add_mutually_exclusive_group()
     group.add_argument('--image_path',default='test',type=str,help='the path of images')
-    parser.add_argument('--model',dest='model_file',default=os.path.join('model','logsepoach_159-acc_0.9801894918173988.pth'),
+    parser.add_argument('--model',dest='model_file',default=os.path.join('model','epoach_189-acc_1.0.pth'),
                         type=str,help='the checkpoint of trained')
     args = parser.parse_args()
 

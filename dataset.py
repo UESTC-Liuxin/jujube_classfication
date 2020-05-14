@@ -25,7 +25,7 @@ class JujubeDataset(Data.Dataset):
         except:
             img = Image.open(os.path.join(self.img_path, '1', self.imgs[idx]))
         # print(type(img))
-        img=img.resize((512,512))
+        # img=img.resize((512,512))
         if self.transform is not None:
             img = self.transform(img)
         return img,self.lables[idx]
